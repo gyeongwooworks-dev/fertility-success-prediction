@@ -166,13 +166,19 @@ SHAP 분석을 통해 모델 예측의 임상적 근거를 제시했습니다.
 
 ```
 fertility-success-prediction/
-├── models/                  # 학습된 모델 파일 (model.pkl)
+├── docs/
+│   ├── presentation.pdf     # 최종 발표 자료
+│   └── report.pdf           # 팀 프로젝트 보고서
+├── models/                  # 학습된 모델 파일
 ├── notebooks/
-│   ├── eda.py               # 탐색적 데이터 분석 및 전처리
+│   ├── day5_4_final.ipynb   # 최종 제출 노트북 (EDA · 학습 · SHAP 포함)
+│   ├── eda.py               # EDA 초기 탐색 스크립트
 │   ├── feature_engineering.py
-│   ├── baseline_model.py
-│   └── day5_4_final.ipynb   # 최종 제출 노트북
-├── src/                     # 소스 코드
+│   └── baseline_model.py
+├── src/                     # 재사용 가능한 Python 모듈
+│   ├── preprocessing.py     # 전처리 상수 · 파생 변수 · preprocess() 파이프라인
+│   ├── features.py          # 팀원 설계 도메인 피처 5개 (add_team_features)
+│   └── model.py             # LightGBM / CatBoost OOF 학습 함수 · 하이퍼파라미터
 ├── submission/              # 최종 제출 파일
 ├── requirements.txt
 └── README.md
